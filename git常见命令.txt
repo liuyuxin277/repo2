@@ -1,0 +1,57 @@
+git常用命令？
+	mkdir gittest 创建文件夹
+
+	cd gittest 切换到gittest目录下
+
+	pwd 显示当前所在目录
+
+	git init 把当前所在目录变成git可以管理的仓库(会在仓库中生成一个隐藏文件夹.git,存放的就是git的版本库，此时的gittest是工作区)
+
+	touch readme.txt 创建文件
+
+	vim/vi readme.txt 编辑文件
+
+	git add readme.txt 告诉git,把文件添加到仓库(将readme.txt添加到暂存区)
+
+	git commit -m "write a readme file" 告诉git，把文件提交到仓库(将readme.txt添加到分支)，-m后面输入的是本次提交的说明
+
+	git status 查看仓库当前的状态
+
+	git diff 查看当前文件和之前文件有何不同之处
+
+	git log 查看最近到最远的提交日志信息
+
+	git reset --hard head^ 切换到上一个版本(^^两个是切换到上上一个版本)
+	
+	git reset --hard (commit id) 切换到指定的提交id值对应的版本
+	
+	git reflog 查看每次提交日志的版本说明及id值
+
+	git checkout -- readme.txt 如果文件修改并且没有添加到暂存区中，可以直接撤销
+
+	git reset head readme.txt 如果文件修改并且已经添加到了暂存区中，可以把暂存区中的修改退回到工作区
+
+	rm readme.txt 删除工作区中的文件(但是只能删除工作区中的，文件如果已经提交了，分支中依然存在，这样工作区与版本库中的数据就不一致了)
+	
+	git rm test.txt 删除版本库中的文件，但是删除之后，要是要执行git commit -m "说明"
+
+	git checkout -- readme.txt 如果误删工作区文件，但是版本库中存在，可以将版本库中的文件更新到工作区中
+
+	ssh-keygen -t rsa 创建ssh的秘钥,执行之后会在用户目录下找到一个.ssh目录，里面有两个文件夹，
+			id_rsa和id_rsa.pub，前者是私钥，后者是公钥。
+
+	git remote add origin git@github.com:fanchenghao/gitest.git 本地关联远程仓库
+
+	git push -u origin master 推送
+
+	git clone git@github.com:fanchenghao/testgit.git
+
+	git checkout -b xxx 创建xxx，并且切换到xxx分支
+		等同于 git branch xxx 创建xxx分支
+		       git checkout xxx 切换到xxx分支
+
+	git branch 查看当前分支
+
+	git merge xxx 合并指定分支到当前分支
+
+	git branch -d xxx 删除xxx分支
